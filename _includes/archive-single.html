@@ -3,7 +3,7 @@
 <div class="mt-5 {{ include.type | default: 'list' }}__item">
     <article class="archive__item md:grid md:grid-cols-4 md:items-baseline">
         <div class="group relative flex flex-col items-start md:col-span-3">
-          <!-- <h2 itemprop="headline" class="archive__item-title no_toc text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+          <h2 itemprop="headline" class="archive__item-title no_toc text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
 
             
             <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50">
@@ -11,19 +11,10 @@
 
             <a href="{{ post.link }}">
               <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span class="relative z-10">
-
-            </span>
             {{ title }}
+            </span>
           </a>
             
-          </h2> -->
-
-          <h2 class="archive__item-title no_toc" itemprop="headline">
-            {% if post.link %}
-              <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-            {% else %}
-              <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-            {% endif %}
           </h2>
          
 
