@@ -1,9 +1,3 @@
-
-
-
-
-
-
 {% if post.header.teaser %}
   {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
 {% else %}
@@ -17,16 +11,20 @@
 {% endif %}
 
 <div class="{{ include.type | default: 'list' }}__item">
-  <article  itemscope class="archive__item md:grid md:grid-cols-4 md:items-baseline" itemtype="https://schema.org/CreativeWork">
-    <div class="group relative flex flex-col items-start md:col-span-3">
-    <h2 itemprop="headline" class="archive__item-title no_toc text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-      {% if post.link %}
-      <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src="{{ teaser | relative_url }}" alt="">
       </div>
-        <a href="{{ post.link }}"><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"><span class="relative z-10"></span></span>{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+    {% endif %}
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    {% if post.excerpt %}<p itemprop="description" class="archive__item-excerpt relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
-  </div>
+    {% include page__meta.html type=include.type %}
+    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
