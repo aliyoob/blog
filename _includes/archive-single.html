@@ -13,7 +13,7 @@
 <div class="{{ include.type | default: 'list' }}__item mb-[25px] hover:bg-[#27272a80] p-[15px] rounded-[17px] hover:text-white" style="transition: all ease 0.3s;">
 
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-
+    <style>.pagination {display: none !important;}</style>
 
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
@@ -27,10 +27,8 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    {% if post.link %}
-  <a href="{{ post.url | relative_url }}" rel="permalink">
+
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
-    {% endif %}
 
     {% if post.link %}
   <a href="{{ post.url | relative_url }}" rel="permalink">
