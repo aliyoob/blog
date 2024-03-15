@@ -9,8 +9,8 @@
 {% else %}
   {% assign title = post.title %}
 {% endif %}
-
-<div class="{{ include.type | default: 'list' }}__item mb-[25px] hover:bg-[#27272a80] p-[15px] rounded-[17px] hover:text-white">
+<a href="{{ post.url | relative_url }}" rel="permalink">
+<div class="{{ include.type | default: 'list' }}__item mb-[25px] hover:bg-[#27272a80] p-[15px] rounded-[17px] hover:text-white" style="transition: all ease 0.3s;">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
@@ -27,3 +27,4 @@
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
+</a>
