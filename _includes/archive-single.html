@@ -17,7 +17,6 @@
         <div class="group relative flex flex-col items-start md:col-span-3">
           <h2 itemprop="headline" class="archive__item-title no_toc text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
             {% if post.link %}
-            <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
             <a href="{{ post.url | relative_url }}" rel="permalink"><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span class="relative z-10">{{ title }}</span></a>
             {% endif %} 
           </h2>
