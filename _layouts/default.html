@@ -51,7 +51,7 @@ layout: archive
                       <a aria-label="Home" class="pointer-events-auto block h-16 w-16 origin-left" style="transform:var(--avatar-image-transform)" href="/"><style>
                         .h-card {display: none !important;
                         }
-                        #page-title {
+                        .archive #page-title {
                           display: none !important;
                         }
                       </style><img alt="" fetchPriority="high" width="512" height="512" decoding="async" data-nimg="1" class="h-16 w-16 rounded-full bg-zinc-100 object-cover dark:bg-zinc-800" style="color:transparent" sizes="4rem" src="http://alirezadra.ir/prrr.png" /></a> 
@@ -109,9 +109,22 @@ layout: archive
               <h1 class="archive__subtitle text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">{{ page.title }}</h1>
               <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">Let's see what's trend today</p>
             </header>
-            <div class="mt-16 sm:mt-20">
+            <!-- <div class="mt-16 sm:mt-20">
               <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-                <div class="flex max-w-3xl flex-col space-y-16">
+                <div class="flex max-w-3xl flex-col space-y-16"> -->
+                  <div class="flex w-full">
+                    <div class="fixed inset-0 flex justify-center sm:px-8">
+                      <div class="flex w-full max-w-7xl lg:px-8"><div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div></div>
+                    </div>
+                    <div class="relative flex w-full flex-col">
+                    
+                      <main class="flex-auto">
+                        <div class="mt-16 sm:px-8 lg:mt-32">
+                          <div class="mx-auto w-full max-w-7xl lg:px-8">
+                            <div class="relative px-4 sm:px-8 lg:px-12">
+                              <div class="mx-auto max-w-2xl lg:max-w-5xl">
+                                <div class="xl:relative">
+                                  <div class="mx-auto max-w-2xl">
                   {{ content }} 
 
                     <!-- {% if paginator %}
@@ -127,14 +140,21 @@ layout: archive
   </div>
   {% include paginator.html %} -->
                   
-                  
-                </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                <!-- </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
   </main>
+  </div>
+  </div>
 
 
