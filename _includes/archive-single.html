@@ -10,7 +10,7 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="mt-5 {{ include.type | default: 'list' }}__item">
+<div class="mb-5 {{ include.type | default: 'list' }}__item">
     <article itemscope class="archive__item md:grid md:grid-cols-4 md:items-baseline" itemtype="https://schema.org/CreativeWork">
       {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
@@ -24,10 +24,11 @@
 
             
             {% if post.link %}
-            <!-- <a href="{{ post.link }}"><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"><span class="relative z-10">
-              {{ title }} </span></span></a> <a href="{{ post.url | relative_url }}" rel="permalink"><span class="sr-only">Permalink</span></a>
-          {% else %} -->
-            <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+            <a href="{{ post.link }}"><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"><span class="relative z-10">
+              {{ title }} </span></span></a>
+               <!-- <a href="{{ post.url | relative_url }}" rel="permalink"><span class="sr-only">Permalink</span></a>
+          {% else %}
+            <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a> -->
           {% endif %}
 
             
