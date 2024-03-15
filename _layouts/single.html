@@ -1,4 +1,3 @@
-
 ---
 layout: default
 ---
@@ -18,15 +17,46 @@ layout: default
     {% include breadcrumbs.html %}
   {% endunless %}
 {% endif %}
+<!DOCTYPE html>
+<html lang="en" class="h-full antialiased">
+  <head>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .h-card {display: none !important;
+      }
+      .archive #page-title {
+        display: none !important;
+      }
+      pre {
+        background: #0E0E10 !important;
+        border-radius: 1rem !important;
+        color: #14B8A6 !important;
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        padding: 20px 0px 20px 20px;
+      }
+      p {
+        margin-bottom: 10px !important;
+      }
+      @media (max-width: 725px) { 
+        pre {
+          font-size: 12px !important;
+        }
+       }
+       @media (max-width: 483px) { 
+        pre {
+        font-size: 8px !important;
+        }
+       }
+    </style>
+
+  </head>
 
 <div id="main" role="main">
-  {% include sidebar.html %}
-
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
