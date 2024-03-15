@@ -1,0 +1,44 @@
+---
+layout: archive
+---
+{{ content }}
+<main class="flex-auto">
+    <div class="mt-16 sm:mt-32 sm:px-8">
+      <div class="mx-auto w-full max-w-7xl lg:px-8">
+        <div class="relative px-4 sm:px-8 lg:px-12">
+          <div class="mx-auto max-w-2xl lg:max-w-5xl">
+            <header class="max-w-2xl">
+              <h1 class="archive__subtitle text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">Follow my dreams in this magical world</h1>
+              <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">Let's see what's trend today</p>
+            </header>
+            <div class="mt-16 sm:mt-20">
+              <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+                <div class="flex max-w-3xl flex-col space-y-16">
+
+                    {% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+    {% for post in posts %}
+      {% include archive-single.html type=entries_layout %}
+    {% endfor %}
+  </div>
+  {% include paginator.html %}
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
