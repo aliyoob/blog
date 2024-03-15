@@ -11,7 +11,12 @@
 {% endif %}
 
 <div class="mt-5 {{ include.type | default: 'list' }}__item">
-    <article class="archive__item md:grid md:grid-cols-4 md:items-baseline">
+    <article itemscope class="archive__item md:grid md:grid-cols-4 md:items-baseline" itemtype="https://schema.org/CreativeWork">
+      {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src="{{ teaser | relative_url }}" alt="">
+      </div>
+    {% endif %}
         <div class="group relative flex flex-col items-start md:col-span-3">
           <h2 itemprop="headline" class="archive__item-title no_toc text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
             <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50">
@@ -20,7 +25,7 @@
             
             {% if post.link %}
             <a href="{{ post.link }}"><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"><span class="relative z-10">
-              {{ title }} </span></span></a> <a href="{{ post.url | relative_url }}" rel="permalink"><span class="sr-only"></span></a>
+              {{ title }} </span></span></a> <a href="{{ post.url | relative_url }}" rel="permalink"><span class="sr-only">Permalink</span></a>
           {% else %}
             <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
           {% endif %}
