@@ -17,7 +17,6 @@
           </a>
             
           </h2>
-          {% include page__meta.html type=include.type %}
           {% if post.excerpt %}<p itemprop="description" class="archive__item-excerpt relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
         </div>
         
